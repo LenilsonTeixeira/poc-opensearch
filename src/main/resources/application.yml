@@ -1,0 +1,8 @@
+spring:
+  application:
+  name: poc-opensearch
+
+opensearch:
+  host: "localhost"
+  port: 9200
+  scheme: "http"
