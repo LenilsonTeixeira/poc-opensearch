@@ -32,12 +32,28 @@ curl -X GET prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/_cat/ind
 ```
 curl -X GET prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/bike/_doc/0ab5aaad-0e37-4751-8c55-c92d5eb7beaa
 ```
-### DELETAR documento por ID  - DELETE /index-name/document-id
+### Delete de documento por ID  - DELETE /index-name/document-id
 ```
 curl -X DELETE prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/bike/0ab5aaad-0e37-4751-8c55-c92d5eb7beaa
 ```
 
-### DELETAR índice  - DELETE /index-name
+### Delete de índice  - DELETE /index-name
 ```
 curl -X DELETE prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/bike
+```
+
+### Adicionando documento - POST /products/_doc
+{
+"message": "Bike HNT"
+}
+```
+curl -X POST "prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/products/_doc/" -H 'Content-Type: application/json' -d'
+{
+  "message": "Bike Caloi"
+}'
+```
+
+### Consultando todos documentos de índice  - GET /index-name/_search
+```
+curl prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/products/_search
 ```

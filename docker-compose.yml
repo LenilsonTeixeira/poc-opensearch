@@ -3,7 +3,7 @@ version: "3.9"
 services:
   opensearch:
     container_name: opensearch
-    image: opensearchproject/opensearch:1.1.0
+    image: opensearchproject/opensearch:latest
     environment:
       - node.name=opensearch
       - cluster.name=opensearch-docker-cluster
@@ -34,6 +34,18 @@ services:
     volumes:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
+  opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards:latest
+    container_name: opensearch-dashboards
+    ports:
+      - "5601:5601"
+    environment:
+      - 'OPENSEARCH_HOSTS=["http://opensearch:9200"]'
+      - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true"
+    expose:
+      - "5601"
+    links:
+      - opensearch
 
 volumes:
   data01:
