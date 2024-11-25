@@ -57,3 +57,17 @@ curl -X POST "prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/produc
 ```
 curl prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/products/_search
 ```
+
+### Exemplo de consulta no DevTools
+```
+GET products/_search
+{
+  "_source": ["message", "age"],
+  "query": {
+    "match": {
+      "message": "Caloi"
+    }
+  },
+  "size": 5
+}
+```
