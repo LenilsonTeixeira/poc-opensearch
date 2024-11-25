@@ -42,7 +42,7 @@ curl -X DELETE prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/bike/
 curl -X DELETE prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/bike
 ```
 
-### Adicionando documento - POST /products/_doc
+### Adicionando documento - POST /index-name/_doc
 {
 "message": "Bike HNT"
 }
