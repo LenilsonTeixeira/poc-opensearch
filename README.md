@@ -32,12 +32,12 @@ curl -X GET prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/_cat/ind
 ```
 curl -X GET prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/bike/_doc/0ab5aaad-0e37-4751-8c55-c92d5eb7beaa
 ```
-### DELETAR um documento por ID  - DELETE /index-name/document-id
+### DELETAR documento por ID  - DELETE /index-name/document-id
 ```
 curl -X DELETE prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/bike/0ab5aaad-0e37-4751-8c55-c92d5eb7beaa
 ```
 
-### DELETAR o indice  - DELETE /index-name
+### DELETAR índice  - DELETE /index-name
 ```
 curl -X DELETE prisma.us-east-1.opensearch.localhost.localstack.cloud:4566/bike
 ```
